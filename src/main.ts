@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import configuration from 'src/config/configuration';
+import configuration from './config/configuration';
 import {
   BadRequestException,
   Logger,
