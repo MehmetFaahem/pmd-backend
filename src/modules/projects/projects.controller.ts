@@ -28,7 +28,7 @@ export class ProjectsController {
     };
   }
 
-  @Post('/task/:id')
+  @Post('/newtask/:id')
   async createTask(@Param('id') id: string, @Body() createDto: CreateTaskDto) {
     const task = await this.projectsService.createTask(createDto, id);
     return {
@@ -49,7 +49,7 @@ export class ProjectsController {
     };
   }
 
-  @Patch('/mark/:id')
+  @Put('/mark/:id')
   async markAsCompleted(
     @Param('id') id: string,
     @Body() updateDto: UpdateTaskDto,

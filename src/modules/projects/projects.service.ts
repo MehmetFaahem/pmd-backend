@@ -120,7 +120,6 @@ export class ProjectsService {
       {
         $set: {
           tasks: [
-            ...exists.tasks.filter(({ task_id }) => task_id !== id),
             {
               task_id: updateDto.task_id,
               name: updateDto.name,
@@ -129,6 +128,8 @@ export class ProjectsService {
               completed: updateDto.completed,
               assigned_members: updateDto.assigned_members,
             },
+
+            ...exists.tasks.filter(({ task_id }) => task_id !== id),
           ],
         },
       },
